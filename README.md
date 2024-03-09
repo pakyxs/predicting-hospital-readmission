@@ -30,7 +30,7 @@ The raw data set Diabetes 130-US hospitals for years 1999-2008 Data Set can be f
 
 ### Data analysis and models testting comparisons
 
-Inside the notebook folder you will find the file notebook.ipynb where the data analysis, cleaning, insights are recorded, as well as the model tests (linear regression, decision tree and SMV) used to find the best prediction, the comparison between them and the choice of the best one for the task.
+Inside the notebook folder you will find the file model.ipynb where the data analysis, cleaning, insights are recorded, as well as the model tests (Linear Regression, XGBoost and SMV) used to find the best prediction, the comparison between them and the choice of the best one for the task.
 
 We obtained the best result with the XGBoot model with optimized parameters. 
 Optimized Model:
