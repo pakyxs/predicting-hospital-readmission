@@ -1,6 +1,6 @@
-# <h1 align=center> **Prediction of hospital readmission in patients with diabetes** </h1>
+# <h1 align=center> **Predicting Hospital Readmission in Diabetic Patients using Docker and Flask** </h1>
 
-This repository contains a Dockerized analysis pipeline for clustering wine data retrieved via an API call using Flask.
+This repository provides a Dockerized analysis pipeline for predicting hospital readmission in diabetic patients.
 
 ## Before project
 
@@ -9,15 +9,15 @@ This repository contains a Dockerized analysis pipeline for clustering wine data
 
 ## Overview
 
-- Data Description
-- Data analysis and models testting comparisons
+- Dataset
+- Analysis and Model Selection
 - Usage
 - Endpoints
 - Files
 - Dependencies
 - Credits
 
-## Description of Dataset
+## Dataset
 
 The raw data set Diabetes 130-US hospitals for years 1999-2008 Data Set can be found [here](https://archive.ics.uci.edu/ml/datasets/Diabetes+130-US+hospitals+for+years+1999-2008#). The data set represents 10 years (1999-2008) of clinical care across 130 U.S. hospitals and integrated delivery networks. It includes more than 50 features representing patient and hospital outcomes. Information was extracted from the database for encounters that met the following criteria.
 
@@ -31,11 +31,9 @@ The raw data set Diabetes 130-US hospitals for years 1999-2008 Data Set can be f
 
 (5) Medications were administered during the encounter. The data contains attributes such as patient number, race, sex, age, type of admission, time in hospital, medical specialty of the admitting physician, number of laboratory tests performed, HbA1c test result, diagnosis, number of medications , diabetes medications, number of outpatients. , hospitalization and emergency visits in the year before hospitalization, etc.
 
-### Data analysis and models testting comparisons
+### Analysis and Model Selection
 
-Inside the notebook folder you will find the file model.ipynb where the data analysis, cleaning, insights are recorded, as well as the model tests (Linear Regression, XGBoost and SMV) used to find the best prediction, the comparison between them and the choice of the best one for the task.
-
-We obtained the best result with the XGBoot model with optimized parameters.
+The `model.ipynb` notebook details data analysis, cleaning, model training, and comparisons (Linear Regression, XGBoost, SVM). XGBoost achieved the best performance:
 
 - Accuracy: 0.6709
 - F1 Score: 0.6695
@@ -44,7 +42,7 @@ We obtained the best result with the XGBoot model with optimized parameters.
 
 ### Usage
 
-Follow the instructions below to run the analysis pipeline:
+**Prerequisites:** Docker installed.
 
 1. **Clone the Repository**:
 
@@ -52,43 +50,33 @@ Follow the instructions below to run the analysis pipeline:
    git clone c16-110-n-data-bi
    ```
 
-2. **Build the Docker Image**:
+2. **Building the Docker Image**:
 
    ```bash
    docker build -t app-readmission .
    ```
 
-3. **Run the Docker Container**:
+3. **Running the Docker Container**:
 
    ```bash
    docker run -p 5000:5000 app-readmission
    ```
 
-### Endpoints
+### API Endpoints:
 
 1. **Access Data**:
 
-   To access raw DataFrame, copy on your browser:
-
-   ```bash
-   127.0.0.1:5000/diabetes-data
-   ```
-
-2. **Access Prediction Result**:
-
-   To access DataFrame with the type of wine identified, copy on your browser:
-
-   ```bash
-   127.0.0.1:5000/prediction/{input}
-   ```
+   - Access Data: http://127.0.0.1:5000/diabetes-data
+   - Prediction: http://127.0.0.1:5000/prediction/{input} (Replace {input} with your data)
 
 ### Files
 
 - `notebooks`: Contains notebooks with the data analysis and ML model.
+- `model.ipynb`: Data analysis and model training notebook.
 - `templates`: Contains HTML template for the endpoints.
 - `Dockerfile`: Contains instructions for building the Docker image.
 - `requirements.txt`: Lists the dependencies required for the analysis.
-- `app.py`: Flask API for serving the diabetes dataset.
+- `app.py`: Flask application code for the API..
 - `README.md`: Instructions for running the analysis pipeline.
 
 ### Dependencies
@@ -105,4 +93,7 @@ Follow the instructions below to run the analysis pipeline:
 
 ### Credits
 
-- This analysis pipeline was created by: Luciana Agustina Bolo ([LinkedIn](https://www.linkedin.com/in/agustina-bolo/)), Moreira Rodrigo ([LinkedIn](https://www.linkedin.com/in/rcmoreg/)) and Ezequiel Mazzini([LinkedIn](https://www.linkedin.com/in/ezequiel-mazzini/)).
+This analysis pipeline was created by: 
+- Luciana Agustina Bolo ([LinkedIn](https://www.linkedin.com/in/agustina-bolo/))
+- Moreira Rodrigo ([LinkedIn](https://www.linkedin.com/in/rcmoreg/))
+- Ezequiel Mazzini([LinkedIn](https://www.linkedin.com/in/ezequiel-mazzini/)).
