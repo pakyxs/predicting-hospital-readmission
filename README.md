@@ -3,10 +3,12 @@
 This repository contains a Dockerized analysis pipeline for clustering wine data retrieved via an API call using Flask.
 
 ## Before project
+
 - [User Stories](https://docs.google.com/document/d/1_BqFKL66q6OwGESEL9LdnIFtoJ4ZN1XUMGONl5F3J0w/edit?usp=sharing)
 - [MVP](https://docs.google.com/document/d/10j4t7Dm43bZ5p5VO0pc2pdTAf__GpJXO013awTWhf14/edit?usp=sharing)
 
 ## Overview
+
 - Data Description
 - Data analysis and models testting comparisons
 - Usage
@@ -16,6 +18,7 @@ This repository contains a Dockerized analysis pipeline for clustering wine data
 - Credits
 
 ## Description of Dataset
+
 The raw data set Diabetes 130-US hospitals for years 1999-2008 Data Set can be found [here](https://archive.ics.uci.edu/ml/datasets/Diabetes+130-US+hospitals+for+years+1999-2008#). The data set represents 10 years (1999-2008) of clinical care across 130 U.S. hospitals and integrated delivery networks. It includes more than 50 features representing patient and hospital outcomes. Information was extracted from the database for encounters that met the following criteria.
 
 (1) It is a hospital encounter (a hospital admission).
@@ -32,10 +35,10 @@ The raw data set Diabetes 130-US hospitals for years 1999-2008 Data Set can be f
 
 Inside the notebook folder you will find the file model.ipynb where the data analysis, cleaning, insights are recorded, as well as the model tests (Linear Regression, XGBoost and SMV) used to find the best prediction, the comparison between them and the choice of the best one for the task.
 
-We obtained the best result with the XGBoot model with optimized parameters. 
-Optimized Model:
-Accuracy:  0.6709327007116993
-F1 Score:  0.6695352892591817
+We obtained the best result with the XGBoot model with optimized parameters.
+
+- Accuracy: 0.6709
+- F1 Score: 0.6695
 
 ![XGBoost top 10 parameters](./images/XGBoostfeatures.png)
 
@@ -45,38 +48,39 @@ Follow the instructions below to run the analysis pipeline:
 
 1. **Clone the Repository**:
 
-    ```bash
-    git clone c16-110-n-data-bi
-    ```
+   ```bash
+   git clone c16-110-n-data-bi
+   ```
 
 2. **Build the Docker Image**:
 
-    ```bash
-    docker build -t app-readmission .
-    ```
+   ```bash
+   docker build -t app-readmission .
+   ```
 
 3. **Run the Docker Container**:
 
-    ```bash
-    docker run -p 5000:5000 app-readmission
-    ```
+   ```bash
+   docker run -p 5000:5000 app-readmission
+   ```
 
 ### Endpoints
 
 1. **Access Data**:
 
-    To access raw DataFrame, copy on your browser:
-    ```bash
-    127.0.0.1:5000/diabetes-data
-    ```
+   To access raw DataFrame, copy on your browser:
+
+   ```bash
+   127.0.0.1:5000/diabetes-data
+   ```
 
 2. **Access Prediction Result**:
 
-    To access DataFrame with the type of wine identified, copy on your browser:
-    ```bash
-    127.0.0.1:5000/prediction/{input}
-    ```
+   To access DataFrame with the type of wine identified, copy on your browser:
 
+   ```bash
+   127.0.0.1:5000/prediction/{input}
+   ```
 
 ### Files
 
@@ -91,7 +95,7 @@ Follow the instructions below to run the analysis pipeline:
 
 - Flask
 - Numpy
-- Pandas 
+- Pandas
 - Matplotlib
 - Seaborn
 - Scikit-learn
