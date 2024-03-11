@@ -64,8 +64,6 @@ The `model.ipynb` notebook details data analysis, cleaning, model training, and 
 
 ### API Endpoints:
 
-1. **Access Data**:
-
    - Access Data: http://127.0.0.1:5000/diabetes-data
    - Prediction: http://127.0.0.1:5000/prediction/{input} (Replace {input} with your data)
 
